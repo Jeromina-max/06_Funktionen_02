@@ -2,19 +2,36 @@
 /*** Rechner */
 /*
 0. a+b / a-b/ a*b / a/b  // ergebnis c
-1. Dateneingabe + -überprüfung :: 
+1. Dateneingabe + -überprüfung :: check
 2. Auswahl Rechenart :: check
 3. Fkt. Grundrechenarten :: check
 4. Ausgabe in Konsole :: check
 */
 
+// Modul: Dateineingabe / -prüfung | Test:
+start();
+function start() {
+    
+    let a,b,op;
+
+    a = parseInt(prompt("Bitte 1. Operanden eingeben"));
+    b = parseInt(prompt("Bitte 2. Operanden eingeben"));
+    op = prompt("Bitte +,-,* oder : eingeben");
+
+    if (!isNaN(a) && !isNaN(b)) {
+        rechner(a,b,op);
+    } else {
+        ausgabe ( "ERROR: Eingabe ist keine Zahl!")
+    }
+}
+
 //Modul: Übergabe der Daten an +/-/*/: Tests:
-rechner(12,4,"+");
+/* rechner(12,4,"+");
 rechner(12,4,"-");
 rechner(12,4,"*");
 rechner(12,4,":");
 rechner(12,0,":");
-rechner(12,0,"irgendwas");
+rechner(12,0,"irgendwas"); */
 
 function rechner(a,b,op) {
   
@@ -42,7 +59,7 @@ function rechner(a,b,op) {
 //ausgabe(dividieren(4, 0));
 function dividieren(a,b) {
     if (b == 0) { // div durch 0 verhindern
-        return "Keine Division durch 0!";
+        return "Keine Division durch 0 möglich!";
     }
     return a / b;
     console.log("hi"); // unreachable code
